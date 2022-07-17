@@ -1,7 +1,7 @@
 package com.example.codingtest.string;
 
 /*
-1. 문자 찾기
+ch1. 문자 찾기
         설명
         한 개의 문자열을 입력받고, 특정 문자를 입력받아 해당 특정문자가 입력받은 문자열에 몇 개 존재하는지 알아내는 프로그램을 작성하세요.
         대소문자를 구분하지 않습니다.문자열의 길이는 100을 넘지 않습니다.
@@ -23,7 +23,7 @@ package com.example.codingtest.string;
 
 import java.util.Scanner;
 
-public class Ch1_searchString {
+public class SearchString {
     public int solution(String str, char t){
         int answer = 0;
 
@@ -36,7 +36,7 @@ public class Ch1_searchString {
     }
 
     public static void main(String[] args) {
-        Ch1_searchString main = new Ch1_searchString();
+        SearchString main = new SearchString();
         Scanner kb = new Scanner(System.in);
         String str = kb.next();
         char c = kb.next().charAt(0);
