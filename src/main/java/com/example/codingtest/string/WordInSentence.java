@@ -25,15 +25,29 @@ import java.util.Scanner;
 public class WordInSentence {
     public String solution(String str){
         String answer = "";
-        int m = Integer.MIN_VALUE;
+        int m = Integer.MIN_VALUE, pos;
         String[] s = str.split(" ");
 
-        for(String x : s){
-            if(m < x.length()) {
-                m = x.length();
-                answer = x;
+//        1. indexOf() 방식
+//        for(String x : s){
+//            if(m < x.length()) {
+//                m = x.length();
+//                answer = x;
+//            }
+//        }
+
+//        2. substring() 방식
+        while ((pos=str.indexOf(' '))!=-1){
+            String tmp = str.substring(0, pos);
+            int len = tmp.length();
+            if(len > m){
+                m=len;
+                answer = tmp;
             }
+            str = str.substring(pos+1);
         }
+        if(str.length()>m) answer=str;
+
 
         return answer;
     }
