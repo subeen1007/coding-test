@@ -35,9 +35,26 @@ import java.util.Scanner;
 public class WordFlip {
     public ArrayList<String> solution(int n, String[] str) {
         ArrayList<String> answer= new ArrayList<>();
-        for (String s:str){
-            answer.add(new StringBuilder(s).reverse().toString());
+//        1. reverse 이용
+//        for (String s:str){
+//            answer.add(new StringBuilder(s).reverse().toString());
+//        }
+
+//        2. 직접 뒤집기
+        for(String s : str){
+            char[] c = s.toCharArray();
+            int lt = 0;
+            int rt = s.length()-1;
+            while(lt<rt){
+                char tmp = c[lt];
+                c[lt] = c[rt];
+                c[rt] = tmp;
+                lt++;
+                rt--;
+            }
+            answer.add(String.valueOf(c));
         }
+
         return answer;
     }
 
